@@ -1,0 +1,42 @@
+import golosinas.*
+
+test "baniado tuttifrutti" {
+	golosinaBaniada.baniaA(tuttifrutti)
+	tuttifrutti.esLibreGluten(false)
+	assert.equals(12, golosinaBaniada.precio())
+	assert.equals(9, golosinaBaniada.peso())
+	assert.equals(false, golosinaBaniada.libreGluten())
+	golosinaBaniada.mordisco()
+	assert.equals(5, tuttifrutti.peso())
+	assert.equals(7, golosinaBaniada.peso())
+	golosinaBaniada.mordisco()
+	assert.equals(5, golosinaBaniada.peso())
+}
+
+test "baniado chocolatin" {
+	chocolatin.pesoInicial(16)
+	golosinaBaniada.baniaA(chocolatin)
+	assert.equals(10, golosinaBaniada.precio())
+	assert.equals(20, golosinaBaniada.peso())
+	assert.equals(false, golosinaBaniada.libreGluten())
+	golosinaBaniada.mordisco()
+	assert.equals(16, golosinaBaniada.peso())
+	golosinaBaniada.mordisco()
+	assert.equals(12, golosinaBaniada.peso())
+	golosinaBaniada.mordisco()
+	assert.equals(10, golosinaBaniada.peso())
+}
+
+
+test "baniado chupetin" {
+	golosinaBaniada.baniaA(chupetin)
+	assert.equals(4, golosinaBaniada.precio())
+	assert.equals(11, golosinaBaniada.peso())
+	assert.equals(true, golosinaBaniada.libreGluten())
+	golosinaBaniada.mordisco()
+	assert.equals(8.3, golosinaBaniada.peso())
+	golosinaBaniada.mordisco()
+	assert.equals(5.67, golosinaBaniada.peso())
+	golosinaBaniada.mordisco()
+	assert.equals(5.103, golosinaBaniada.peso())
+}

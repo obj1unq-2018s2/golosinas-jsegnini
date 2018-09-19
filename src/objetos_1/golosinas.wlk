@@ -82,9 +82,10 @@ object golosinaBaniada {
 	var golosinaInterior
 	var pesoBanio = 4
 	
+	
 	method baniaA(unaGolosina) { golosinaInterior = unaGolosina }
 	method precio() {return golosinaInterior.precio() + 2 /* completar */ }
-	method peso() {return golosinaInterior.peso() + 4 /* completar */ }
+	method peso() {return golosinaInterior.peso() + pesoBanio /* completar */ }
 	method mordisco() {
 		golosinaInterior.mordisco()
 		if (pesoBanio > 0) { pesoBanio -= 2 }
@@ -95,11 +96,18 @@ object golosinaBaniada {
 }
 
 object tuttifrutti {
+	var gustos = ["frutilla", "chocolate", "naranja"]
 	var peso = 5
 	var libreGluten = false
+	method gustos() {return gustos}
 	method peso() {return peso}
-	method precio() = if libreGluten 7 else 10
+	method precio() = if (libreGluten) 7 else 10
 	method esLibreGluten(param) {libreGluten = param}
 	// como manejar el cambio de sabor ??
+	method mordisco() {
+		gustos.add(gustos.first())
+		gustos = gustos.drop(1)
+	}
+	method gusto() {return gustos.first()}
+	method libreGluten() {return libreGluten}
 }
-

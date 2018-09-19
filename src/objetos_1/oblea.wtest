@@ -1,0 +1,34 @@
+
+import golosinas.*
+
+test "peso" {
+	assert.equals(250, oblea.peso())
+}
+
+
+test "precio" {
+	assert.equals(5, oblea.precio())
+	
+}
+
+test "gusto" {
+	assert.equals("vainilla", oblea.gusto())
+}
+
+test "gluten" {
+	assert.equals(false, oblea.libreGluten())
+}
+
+test "mordisco" {
+	oblea.mordisco()
+	assert.equals(125, oblea.peso())
+}
+
+test "peso menor a 70 g" {
+	oblea.mordisco()
+	assert.equals(125, oblea.peso())
+	oblea.mordisco()
+	assert.equals(62.5, oblea.peso())
+	oblea.mordisco()
+	assert.equals(46.875, oblea.peso())
+}

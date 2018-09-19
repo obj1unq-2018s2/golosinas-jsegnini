@@ -1,0 +1,27 @@
+
+import golosinas.*
+
+test "peso" {
+	assert.equals(5, caramelo.peso())
+}
+
+
+test "precio" {
+	assert.equals(1, caramelo.precio())
+	
+}
+
+test "gusto" {
+	assert.equals("frutilla", caramelo.gusto())
+}
+
+test "gluten" {
+	assert.equals(true, caramelo.libreGluten())
+}
+
+test "mordisco" {
+	caramelo.mordisco()
+	assert.equals(4, caramelo.peso())
+	caramelo.mordisco()
+	assert.equals(3, caramelo.peso())
+}

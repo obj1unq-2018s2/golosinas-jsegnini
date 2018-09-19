@@ -1,0 +1,29 @@
+
+import golosinas.*
+
+test "peso" {
+	chocolatin.pesoInicial(40)
+	assert.equals(40, chocolatin.peso())
+}
+
+
+test "precio" {
+	chocolatin.pesoInicial(40)
+	assert.equals(20, chocolatin.precio())
+	
+}
+
+test "gusto" {
+	assert.equals("chocolate", chocolatin.gusto())
+}
+
+test "gluten" {
+	assert.equals(false, chocolatin.libreGluten())
+}
+
+test "mordisco" {
+	chocolatin.pesoInicial(40)
+	chocolatin.mordisco()
+	assert.equals(38, chocolatin.peso())
+}
+
