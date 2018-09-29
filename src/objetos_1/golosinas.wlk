@@ -1,3 +1,5 @@
+// Muy bien!!! Entraga completa
+
 object bombon {
 	var peso = 15
 	
